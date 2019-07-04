@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/task3Practise/src" modelPluginID="task3Practise"
+    modelName="StateMachine" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>My.ecore</foreignModel>
+  <genPackages prefix="StateMachine" disposableProviderFactory="true" ecorePackage="My.ecore#/">
+    <genClasses image="false" ecoreClass="My.ecore#//State">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference My.ecore#//State/outgoings"/>
+    </genClasses>
+    <genClasses ecoreClass="My.ecore#//NamedState">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute My.ecore#//NamedState/name"/>
+    </genClasses>
+    <genClasses ecoreClass="My.ecore#//UnNamedState">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute My.ecore#//UnNamedState/name"/>
+    </genClasses>
+    <genClasses ecoreClass="My.ecore#//Transition">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute My.ecore#//Transition/action"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute My.ecore#//Transition/trigger"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference My.ecore#//Transition/source"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference My.ecore#//Transition/target"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute My.ecore#//Transition/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute My.ecore#//Transition/name"/>
+    </genClasses>
+    <genClasses ecoreClass="My.ecore#//WashingMachine">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference My.ecore#//WashingMachine/states"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference My.ecore#//WashingMachine/transitions"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

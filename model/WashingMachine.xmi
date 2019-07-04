@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Talha:WashingMachine
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:Talha="www.hs-fulda.de"
+    xsi:schemaLocation="www.hs-fulda.de My.ecore">
+  <states xsi:type="Talha:UnNamedState"
+      outgoings="//@transitions.0"
+      name="initial"/>
+  <states xsi:type="Talha:NamedState"
+      outgoings="//@transitions.1 //@transitions.2"
+      name="locking"/>
+  <states xsi:type="Talha:NamedState"
+      outgoings="//@transitions.3"
+      name="waiting"/>
+  <states xsi:type="Talha:NamedState"
+      outgoings="//@transitions.4"
+      name="washing"/>
+  <states xsi:type="Talha:NamedState"
+      outgoings="//@transitions.5"
+      name="unlocking"/>
+  <states xsi:type="Talha:UnNamedState"
+      name="final"/>
+  <transitions
+      source="//@states.0"
+      target="//@states.1"
+      id="1"
+      name="I2L"/>
+  <transitions
+      action="startWash"
+      trigger="PRESS_DELAY_START"
+      source="//@states.1"
+      target="//@states.2"
+      id="2"
+      name="L2waiting"/>
+  <transitions
+      action="startWash"
+      trigger="PRESS_START"
+      source="//@states.1"
+      target="//@states.3"
+      id="3"
+      name="L2washing"/>
+  <transitions
+      action="startWash"
+      source="//@states.2"
+      target="//@states.3"
+      id="4"
+      name="W2W"/>
+  <transitions
+      source="//@states.3"
+      target="//@states.4"
+      id="5"
+      name="Wash2U"/>
+  <transitions
+      source="//@states.4"
+      target="//@states.5"
+      id="6"
+      name="U2F"/>
+</Talha:WashingMachine>
